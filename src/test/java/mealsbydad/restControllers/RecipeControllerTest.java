@@ -1,5 +1,9 @@
 package mealsbydad.restControllers;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import mealsbydad.entities.Recipe;
+import mealsbydad.entities.User;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
@@ -29,5 +33,24 @@ class RecipeControllerTest {
         mvc.perform(MockMvcRequestBuilders.get("/api/recipes").accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(MockMvcResultMatchers.content().string(equalTo("[]")));
+    }
+
+    @Test
+    public void addRecipe() throws Exception {
+        User user = new User("Darry", "Darry", "Parks", "FFFFF");
+        Recipe recipe = new Recipe(user, "Recipe Name", "Recipe Description", "Recipe Ingredients", "Recipe Instructions");
+
+//        mvc.perform(MockMvcRequestBuilders.post("/api/recipe").accept(MediaType.APPLICATION_JSON)
+//                .contentType(MediaType.APPLICATION_JSON)
+//                .content(getJsonContent(recipe)))
+//                .andExpect(status().isOk());
+        mvc.perform(MockMvcRequestBuilders.post("/api/recipe")
+                        .accept(MediaType.APPLICATION_JSON) // I'm expecting JSON back because I'm a program and want recordized date
+                        .contentType(MediaType.APPLICATION_JSON) // I'm a program and sending you JSON-encoded data
+                        .content(getJsonContent(recipe)))
+                .andExpect(status().isOk());
+    }
+    private static String getJsonContent(Object o) throws JsonProcessingException {
+        return new ObjectMapper().writeValueAsString(o);
     }
 }

@@ -2,9 +2,8 @@ package mealsbydad.restControllers;
 
 import mealsbydad.entities.Recipe;
 import mealsbydad.respositories.RecipeRepository;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @CrossOrigin
@@ -12,7 +11,7 @@ public class RecipeController {
 
     final private RecipeRepository recipeRepository;
 
-    public RecipeController(RecipeRepository recipeRepository) {
+    public RecipeController(final @Autowired RecipeRepository recipeRepository) {
         this.recipeRepository = recipeRepository;
     }
 
@@ -20,4 +19,7 @@ public class RecipeController {
     public Iterable<Recipe> getRecipes() {
         return recipeRepository.findAll();
     }
+
+    @PostMapping("/api/recipe")
+    public Recipe postRecipe(final @RequestBody Recipe recipe) {return recipeRepository.save(recipe); }
 }
