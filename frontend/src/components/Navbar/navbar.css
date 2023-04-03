@@ -1,3 +1,4 @@
+
 .app_navbar{
     color: white;
     width: 100%;
@@ -7,7 +8,6 @@
     background: var(--color-black);
     padding: 1rem 2rem;
 }
-
 
 .app__navbar-logo{
     display: flex;
@@ -28,7 +28,7 @@
 }
 
 .app__navbar-links li{
-    margin: 0 1rem ;
+    margin: 0 0.5rem ;
     cursor: pointer;
 }
 
@@ -41,15 +41,16 @@
     justify-content: flex-end;
     align-items: center;
 }
+
 .app__navbar-login a{
     margin: 0 1rem;
     text-decoration: none;
     transition: 0.5s ease;
 }
+
 .app__navbar-login a:hover{
   border-bottom: 1px  solid #bf9b30;
 }
-
 
 .app__navbar-login div{
     width: 2px;
@@ -57,67 +58,128 @@
     background-color: #545454;
 }
 
-.app__navbar-smallscreen{
-    /* display: none; */
-
+.navbar {
+  position: absolute;
+  color: white;
+  width: 100%;
+  height: 60px;
+  left: 0px;
+  top: 0px;
 }
 
-.app__navbar-smallscreen_overlay{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: var(--color-black);
-    transition: 0.5s ease;
-    
-    flex-direction: column; 
-    z-index: 5;
-}
-
-
-
-
-.app__navbar-smallscreen_overlay .overlay__close{
-    font-size: 25px;
-    color: #bf9b30;
-    cursor: pointer;
+.loginicon {
     position: absolute;
-    top: 20px;
-    right: 20px;
-}
+    width: 50px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bolder;
+    color: white;
+    height: 20px;
+    font-size: 10px;
+    left: 85%;
+    top: 10px;
 
-
-.app__nav-smallscreen_links{
-    list-style: none;
-    
-
-}
-.app__nav-smallscreen_links{
-    margin: 2rem;
+    background:#bf9b30;
+    border-radius: 24px;
     cursor: pointer;
-    color: #bf9b30;
-    font-size: 2rem;
+  }
+
+  .loginicon:hover{
+    color: white;
+  }
+
+  .login-form{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  .form-box{
+    margin-top: 7vh;
+    background: black;
+    padding-right: 80px;
+    padding-left: 80px;
+    border-radius: 20px;
+    box-shadow: 10px 10px 10px 1px rgba(0, 0, 0, 0.2);
+  }
+
+  .login-text{
+    width: 100%;
+    color: white;
+    border-bottom: 2px solid white;
+    line-height: 30px;
+    width: 100%;
+    font-weight: bolder;
     text-align: center;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5vh;
+  }
 
-}
-.app__nav-smallscreen_links li:hover{
-    color: wheat;
-    
-}
+  label {
+    color:white;
+    width: 100%;
+    text-align: center;
+  }
+
+  .login-box{
+    border: 1px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    padding: 2px;
+    padding-left: 10px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    margin: 5px;
+    font-size: 11pt;
+    background: transparent;
+    transition: 1s;
+    outline: none;
+  }
+
+  .login-btn{
+    width: 75%;
+    justify-content: center;
+    align-items: center;
+    background:#bf9b30;
+    color: white;
+    margin-top: 5px;
+    border-radius: 20px;
+    border: none;
+    font-size: 15pt;
+    font-weight: 700;
+    transition: 1s;
+    outline: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+
+  .login-btn:hover{
+    transform: scale(1.03);
+    letter-spacing: 4px;
+    background-color: #7FFFD4;
+    color: #1E90FF;
+  }
+
+  .show {
+    display: block;
+    transition: 800ms;
+    opacity: 1;
+  }
+
+  .show.active {
+    transform: translateY(100px) scale(0) rotateY(180deg);
+    opacity: 0;
+  }
 
 
-
-
-@media screen and (max-width: 1150px) {
-    .app__navbar-links{
-        display: none;
-    }
-    .app__navbar-smallscreen{
-        display: flex;
-    }
-}
 
 
     
