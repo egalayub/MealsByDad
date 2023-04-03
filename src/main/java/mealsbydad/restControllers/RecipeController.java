@@ -1,6 +1,7 @@
 package mealsbydad.restControllers;
 
 import mealsbydad.entities.Recipe;
+import mealsbydad.entities.User;
 import mealsbydad.respositories.RecipeRepository;
 import mealsbydad.respositories.UserRepository;
 import org.springframework.web.bind.annotation.*;
@@ -24,8 +25,9 @@ public class RecipeController {
         return recipeRepository.findAll();
     }
 
-    @PostMapping("/api/recipe")
-    public Recipe postRecipe(final @RequestBody Recipe recipe) {
+    @PostMapping("/api/users/{user_id}/recipe")
+    public Recipe postRecipe(@RequestParam User user, final @RequestBody Recipe recipe, @PathVariable Long user_id) {
+        recipe.setAuthor(user);
         return recipeRepository.save(recipe);
     }
 

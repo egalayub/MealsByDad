@@ -16,6 +16,7 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import static org.hamcrest.Matchers.equalTo;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -36,20 +37,29 @@ class RecipeControllerTest {
 
         mvc.perform(MockMvcRequestBuilders.get("/api/recipes").accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(MockMvcResultMatchers.content().string(equalTo("[]")));
+                .andExpect(content().string(equalTo("[]")));
     }
 
     @Test
     public void postRecipe() throws Exception {
         final User user = new User("user1", "first", "last", "pass");
-        final Recipe recipe = new Recipe(user, "name", "description",
+        user.setId(1);
+        final Recipe recipe = new Recipe("name", "description",
                 "ingredients", "instructions");
+        recipe.setId(1);
 
-        mvc.perform(MockMvcRequestBuilders.post("/api/recipe")
+        recipe.setAuthor(user);
+
+
+        final String recipeWithOutAuthor = getJsonContent(recipe);
+
+
+        mvc.perform(MockMvcRequestBuilders.post("/api/users/1/recipe")
                         .accept(MediaType.APPLICATION_JSON)
                         .contentType(MediaType.APPLICATION_JSON)
-                        .content(getJsonContent(recipe)))
-                .andExpect(status().isOk());
+                        .content(recipeWithOutAuthor))
+                .andExpect(status().isOk())
+        .andExpect(content().string(equalTo(getJsonContent(recipe))));
 
     }
 

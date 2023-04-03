@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.Optional;
 
 @Entity
 public class Recipe {
@@ -32,6 +33,14 @@ public class Recipe {
 
     public Recipe(User author, String name, String description, String ingredients, String instructions) {
         this.author = author;
+        this.name = name;
+        this.description = description;
+        this.ingredients = ingredients;
+        this.instructions = instructions;
+
+    }
+
+    public Recipe(String name, String description, String ingredients, String instructions) {
         this.name = name;
         this.description = description;
         this.ingredients = ingredients;
@@ -89,5 +98,9 @@ public class Recipe {
 
     public User getAuthor() {
         return this.author;
+    }
+
+    public void setAuthor(User author) {
+        this.author = author;
     }
 }
