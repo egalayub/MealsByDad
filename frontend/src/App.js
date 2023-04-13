@@ -8,7 +8,7 @@ import Footer from './components/Footer/Footer';
 import ShoppingList from './ShoppingList/ShoppingList';
 import Search from './components/FindRecipe/Search';
 import RecipesList from './components/RecipeCard/RecipesList';
-import AboutTheDevs from './components/AboutTheDevs/AboutTheDevs';
+
 
 
 
@@ -23,7 +23,7 @@ function App() {
       <ShoppingList />
       <RecipesList />
       <Footer />
-      <AboutTheDevs />
+
 
     </div>
   );

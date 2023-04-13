@@ -83,8 +83,10 @@ function handleRecipeClick (recipe) {
         // ,console.log (recipe)
     ))}
 
-    <div className='text-center'>
-    <h1 className=' text-white'>{recipeName}</h1>
+    <div className=' text-white text-center'>
+        <br/>
+    <h1 className=''>{recipeName}</h1>
+    <br/>
 <h2>{recipeDescription}</h2>
 <br />
 <h3 className = {isHidden}>Ingredients</h3>
