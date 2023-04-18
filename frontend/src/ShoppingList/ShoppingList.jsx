@@ -29,7 +29,7 @@ const ShoppingList = () => {
   };
 
   return (
-    <div className='flex justify-center'>
+    <div className='flex justify-center' id='ShoppingList'>
     <div className="shopping-list flex flex-col justify-center md:w-1/2 w-full">
       <h1 className="title">Shopping List</h1>
       <form className='flex justify-center' onSubmit={handleAddItem}>
