@@ -49,6 +49,9 @@ const Navbar = () => {
           <li className="p__opensans">
             <a href="#contact">Contact</a>
           </li>
+          <li className="p__opensans">
+            <a href="#search">Search</a>
+          </li>
         </ul>
         <div className="app__navbar-login">
           <div className="navbar"></div>

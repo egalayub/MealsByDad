@@ -66,6 +66,10 @@ function handleRecipeClick (recipe) {
     
 
   return (
+    <>
+    <div className='h-24' id='search'>
+
+    </div>
     <div className='flex flex-col justify-center items-center mt-12'>
         <h1 className="text-4xl text-[#AAAAAA] font-bold mb-10">Recipe Search</h1>
         <input type ='text' placeholder='Search for a Recipe...' className='searchBar text-bold  bg-white  text-3xl text-black  ' onChange={(event ) => setValue(event.target.value)} value={value} />
@@ -96,6 +100,7 @@ function handleRecipeClick (recipe) {
     </div>
         </div>
     </div>
+    </>
   )
 }
 
