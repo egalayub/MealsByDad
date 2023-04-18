@@ -38,7 +38,7 @@ const Navbar = () => {
         </div>
         <ul className="app__navbar-links">
           <li className="p__opensans">
-            <a href="#top">Home</a>
+            <a href="#home">Home</a>
           </li>
           <li className="p__opensans">
             <a href="#recipes">Find Recipes</a>
