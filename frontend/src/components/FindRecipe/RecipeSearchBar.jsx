@@ -205,7 +205,7 @@ function RecipeSearchBar() {
         
         {/* <iframe src={howToVideo} frameborder="0"></iframe> */}
         {/* <iframe width="300" height="250" src={"https://www.youtube.com/embed/CrlTS1mJQMA"} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>   */}
-        <p id='foodinfo'> <a href={howToVideo}> <button>Follow along</button> </a></p>
+        <p id='foodinfo'> <a target="_blank" rel="noreferrer" href={howToVideo}> <button>Follow along</button> </a></p>
         </div>
         
           <p id='like'> {count} <button id='heartbutton' onClick={handleCount}><AiOutlineHeart id='icon'/></button> </p>

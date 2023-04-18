@@ -18,10 +18,10 @@ function App() {
       <Navbar />
       <Header />
       <RecipeSearchBar />
-      <Search/>
       <ShoppingList />
-      <Slider1 />
+      <Search/>
       <RecipesList />
+      <Slider1 />
       <Footer />
       <AboutTheDevs />
 

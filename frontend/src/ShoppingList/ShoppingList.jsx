@@ -32,7 +32,7 @@ const ShoppingList = () => {
     <div className='flex justify-center'>
     <div className="shopping-list flex flex-col justify-center md:w-1/2 w-full">
       <h1 className="title">Shopping List</h1>
-      <form onSubmit={handleAddItem}>
+      <form className='flex justify-center' onSubmit={handleAddItem}>
         <input type="text" name="item" className="input" placeholder="Add an item" />
         <button type="submit" className="button">Add</button>
       </form>
