@@ -41,7 +41,7 @@ const Navbar = () => {
             <a href="#home">Home</a>
           </li>
           <li className="p__opensans">
-            <a href="#recipes">Find Recipes</a>
+            <a href="#recipes">Random Recipes</a>
           </li>
           <li className="p__opensans">
             <a href="#tools">Resources</a>
@@ -51,6 +51,9 @@ const Navbar = () => {
           </li>
           <li className="p__opensans">
             <a href="#search">Search</a>
+          </li>
+          <li className="p__opensans">
+            <a href="#ShoppingList">Shopping List</a>
           </li>
         </ul>
         <div className="app__navbar-login">
